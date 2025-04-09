@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("mongodb://localhost:27017/anumaan")
+}
+
+model User {
+  id        String      @id @default(cuid())
+  phone     String      @unique
+  name      String
+  balance   Float       @default(0)
+  portfolio Portfolio[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model Portfolio {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  symbol    String
+  quantity  Float
+  avgPrice  Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, symbol])
+}
+
+model OTP {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  phone     String
+  otp       String
+  createdAt DateTime @default(now())
+  expiresAt DateTime @default(dbgenerated("new Date(new Date().getTime() + 1000 * 60 * 5)")) // 5 minutes
+
+  @@index([phone])
+} 
