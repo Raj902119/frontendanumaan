@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { Bitcoin, DollarSign, Trophy, Newspaper, Landmark, Coins } from 'lucide-react'
+import { DollarSign, Trophy, Landmark, Coins, Dumbbell, Sprout } from 'lucide-react'
 
 export function LiveMarkets() {
   const markets = [
@@ -33,7 +33,21 @@ export function LiveMarkets() {
       icon: <Coins className="h-4 w-4" />,
       category: "Currency",
       isLive: true,
-    }
+    },
+    {
+      id: 5,
+      title: "Kabaddi",
+      icon: <Sprout className="h-4 w-4" />,
+      category: "Kabaddi",
+      isLive: true,
+    },
+    {
+      id: 6,
+      title: "Football",
+      icon: <Dumbbell className="h-4 w-4" />,
+      category: "Football",
+      isLive: true,
+    } 
   ]
 
   return (
