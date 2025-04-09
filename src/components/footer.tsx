@@ -43,9 +43,6 @@ export function Footer() {
                   <a href="/politics" className="text-gray-600 hover:text-gray-900">Politics</a>
                 </li>
                 <li>
-                  <a href="/crypto" className="text-gray-600 hover:text-gray-900">Crypto</a>
-                </li>
-                <li>
                   <a href="/sports" className="text-gray-600 hover:text-gray-900">Sports</a>
                 </li>
                 <li>

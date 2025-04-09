@@ -13,9 +13,7 @@ export function CategoriesNav() {
     // First Row
     { name: "Cricket", href: "/cricket", icon: "/Cricket.svg" },
     { name: "Finance", href: "/finance", icon: "/finance.svg" },
-    { name: "Politics", href: "/politics", icon: "/politician.svg" },
-    { name: "Crypto", href: "/crypto", icon: "/crypto.svg" },
-    // Second Row
+    { name: "Politics", href: "/politics", icon: "/politician.svg" },    // Second Row
     { name: "Kabaddi", href: "/kabaddi", icon: "/kabbadi.svg" },
     { name: "Football", href: "/football", icon: "/football.svg" },
     { name: "Basketball", href: "/basketball", icon: "/basketball.svg" },

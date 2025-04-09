@@ -15,9 +15,9 @@ export function LiveMarkets() {
     },
     {
       id: 2,
-      title: "Bitcoin",
-      icon: <Bitcoin className="h-4 w-4" />,
-      category: "Crypto",
+      title: "Devendra Fadnavis",
+      icon: <Landmark className="h-4 w-4" />,
+      category: "Devendra Fadnavis",
       isLive: true,
     },
     {
@@ -29,18 +29,11 @@ export function LiveMarkets() {
     },
     {
       id: 4,
-      title: "Ethereum",
+      title: "Currency",
       icon: <Coins className="h-4 w-4" />,
-      category: "Crypto",
-      isLive: false,
-    },
-    {
-      id: 5,
-      title: "Devendra Fadnavis",
-      icon: <Landmark className="h-4 w-4" />,
-      category: "Politics",
+      category: "Currency",
       isLive: true,
-    },
+    }
   ]
 
   return (
