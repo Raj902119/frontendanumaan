@@ -1,13 +1,21 @@
-import { PrismaClient } from '@prisma/client'
+// Mock Prisma client for frontend-only deployment
+const mockPrisma = {
+  user: {
+    findUnique: () => Promise.resolve(null),
+    create: () => Promise.resolve(null),
+    update: () => Promise.resolve(null),
+    findMany: () => Promise.resolve([]),
+  },
+  portfolio: {
+    findMany: () => Promise.resolve([]),
+    upsert: () => Promise.resolve(null),
+  },
+  oTP: {
+    create: () => Promise.resolve(null),
+    findFirst: () => Promise.resolve(null),
+    delete: () => Promise.resolve(null),
+  },
+  $disconnect: () => Promise.resolve(),
+};
 
-const prismaClientSingleton = () => {
-  return new PrismaClient()
-}
-
-declare global {
-  var prisma: undefined | ReturnType<typeof prismaClientSingleton>
-}
-
-export const prisma = globalThis.prisma ?? prismaClientSingleton()
-
-if (process.env.NODE_ENV !== 'production') globalThis.prisma = prisma 
+export const prisma = mockPrisma; 

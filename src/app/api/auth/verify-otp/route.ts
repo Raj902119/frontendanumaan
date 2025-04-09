@@ -2,29 +2,20 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { phone, otp, name, referralCode } = await request.json();
-
-    // Validate input
-    if (!phone || !otp) {
-      return NextResponse.json(
-        { success: false, message: 'Phone number and OTP are required' },
-        { status: 400 }
-      );
-    }
-
-    // Forward to backend API with v1 prefix
-    const response = await fetch('http://localhost:5000/api/v1/auth/verify-otp', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ phone, otp, name, referralCode }),
+    // For frontend-only deployment, we'll return mock authentication data
+    return NextResponse.json({
+      success: true,
+      message: 'Authentication successful',
+      data: {
+        token: 'mock-jwt-token-for-frontend-display',
+        refreshToken: 'mock-refresh-token',
+        user: {
+          id: 'mock-user-id',
+          phone: '9999999999',
+          name: 'Demo User'
+        }
+      }
     });
-
-    const data = await response.json();
-
-    // Return response from backend
-    return NextResponse.json(data, { status: response.status });
   } catch (error) {
     console.error('Error in verify-otp API route:', error);
     return NextResponse.json(

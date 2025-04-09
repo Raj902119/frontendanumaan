@@ -4,15 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "prisma generate"
+    "lint": "next lint"
   },
   "dependencies": {
     "@builder.io/react": "^8.0.4",
     "@headlessui/react": "^2.2.0",
-    "@prisma/client": "^6.2.1",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.1.4",
     "@radix-ui/react-dialog": "^1.1.6",
@@ -67,7 +65,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "postcss": "^8.5.3",
-    "prisma": "^6.2.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
