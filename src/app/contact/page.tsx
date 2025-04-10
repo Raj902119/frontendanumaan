@@ -66,6 +66,18 @@ export default function ContactPage() {
           Send
         </button>
       </form>
+
+      {/* Contact Information Section */}
+      <div className="w-full max-w-[1130px] mt-10 mb-14 p-6 bg-white rounded-xl shadow-md text-neutral-700">
+        <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+        <div className="space-y-2 text-sm sm:text-base">
+          <p><strong>Name:</strong> Madhuri Patil</p>
+          <p><strong>Email:</strong> info@anumaan.co</p>
+          <p><strong>Address:</strong> VTC: Talgaon, PO: Undale, Sub District: Karad, District: Satara, State: Maharashtra, PIN Code: 415111</p>
+        </div>
+      </div>
+      {/* End Contact Information Section */}
+
     </div>
   );
 }
